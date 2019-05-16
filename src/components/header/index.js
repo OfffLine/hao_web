@@ -29,13 +29,13 @@ class HeaderView extends Component {
     }
 
     componentWillReceiveProps(nextProps) {
-        if (nextProps.location.pathname !== "/about") {
+        if (nextProps.location.pathname.indexOf("/about") !== -1) {
             this.setState({
-                isHome: true,
+                isHome: false,
             });
         } else {
             this.setState({
-                isHome: false,
+                isHome: true,
             });
         }
     }
