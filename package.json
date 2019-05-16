@@ -2,7 +2,7 @@
   "name": "hao_web",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://OfffLine.github.io/hao_web",
+  "homepage": "./",
   "dependencies": {
     "antd": "^3.16.3",
     "axios": "^0.18.0",
