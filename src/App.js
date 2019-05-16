@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {Provider} from 'react-redux';
-import {BrowserRouter, Route, Switch} from 'react-router-dom'
+import {HashRouter, Route, Switch} from 'react-router-dom'
 import store from './store';
 import HeaderView from './components/header';
 import HomeView from './pages/home';
@@ -12,7 +12,7 @@ class App extends Component {
     render() {
         return (
             <Provider store={store}>
-                <BrowserRouter>
+                <HashRouter>
                     <React.Fragment>
                         <main>
                             <HeaderView/>
@@ -24,7 +24,7 @@ class App extends Component {
                             </ContentWrapper>
                         </main>
                     </React.Fragment>
-                </BrowserRouter>
+                </HashRouter>
             </Provider>
         )
     }
