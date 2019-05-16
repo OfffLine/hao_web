@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "225c9828b6b5f43342ab20d4bd27cac4",
+    "revision": "06a540e3d7fbfcca414f1e998caebb67",
     "url": "/hao_web/index.html"
   },
   {
