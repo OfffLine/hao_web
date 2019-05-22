@@ -53,6 +53,7 @@ export const AboutWrapper = styled.div`
       margin-bottom: 60px;
     }
     .image_work{
+      cursor: pointer;
       margin-bottom: 40px;
       width: 600px
     }
