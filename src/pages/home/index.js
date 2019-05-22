@@ -6,7 +6,7 @@ import {Link} from 'react-router-dom'
 class HomeView extends Component {
     state = {
         index: 0,
-        navArray: ["ALL", "NAV_WRAPPER", "COMPONENT", "HANDLE_CLICK"]
+        navArray: ["ALL", "NAV_WRAPPER", "COMPONENT", "GRAPHIC DESIGN"]
     }
 
     render() {
@@ -22,19 +22,17 @@ class HomeView extends Component {
                 </div>
 
                 <div className="works_wrapper">
-                    {this.state.navArray.map((value, index) => (
-                        <div className="work_item" key={index}>
-                            <div className="image_wrapper">
-                                <Link to="/detail">
-                                    <img
-                                        className="work_image"
-                                        src={imageUrl}/>
-                                </Link>
-                            </div>
-                            <span className="work_title">work_title</span>
-                            <span className="work_desc">work_descwork_descwork_descwork_descwork_desc</span>
+                    <div className="work_item">
+                        <div className="image_wrapper">
+                            <Link to="/detail">
+                                <img
+                                    className="work_image"
+                                    src="http://bmob-cdn-25931.b0.upaiyun.com/2019/05/22/b25c777640affbb68057e865835b3600.png"/>
+                            </Link>
                         </div>
-                    ))}
+                        <span className="work_title">RESEARCH</span>
+                        <span className="work_desc">PRODUCTS DESIGN</span>
+                    </div>
                 </div>
             </HomeWrapper>
         );
