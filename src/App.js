@@ -8,6 +8,8 @@ import HomeView from './pages/home';
 import DetailView from './pages/detail';
 import AboutView from './pages/about';
 import {ContentWrapper} from "./style"
+import Bmob from "hydrogen-js-sdk";
+Bmob.initialize("31320296840158fa6b01d5fdf17d4838", "6aeeefab2552635d2a3b99893c231eb2");
 
 class App extends Component {
 

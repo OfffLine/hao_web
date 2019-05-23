@@ -3,53 +3,46 @@ import {AboutWrapper} from './style'
 import imageAbout from '../../assets/icon_back.png'
 import {withRouter} from "react-router-dom";
 import RcViewer from 'rc-viewer'
+import {decodeQuery} from '../../utils'
+import Bmob from "hydrogen-js-sdk";
 
 class DetailView extends Component {
+    state = {
+        worksDetail: {}
+    }
+
     render() {
         return (
             <AboutWrapper>
                 <img className="btn_back" src={imageAbout} onClick={this.handleBackClick}/>
                 <div className="work_info">
                     <span className="work_title">
-                       INNERWORLD
+                        {this.state.worksDetail.detail_title}
                     </span>
                     <span className="msg_14">
-                        Technology, Yuquan Campus, Zhejiang University
+                        {this.state.worksDetail.detail_desc}
                     </span>
                     <span className="msg_12 time_style">
-                        TIME:2019/05/16
+                        TIME:{this.state.worksDetail.time}
                     </span>
                     <span className="msg_12">
-                        TEAM:JIAHAO GUO,JIAHAO GUO,JIAHAO GUO
+                        AUTHOR:{this.state.worksDetail.author}
                     </span>
                     <span className="msg_12">
-                        FOCUS:Zhejiang University
-                    </span>
-                    <span className="msg_12">
-                        SKILLS:Design
+                        SKILL:{this.state.worksDetail.skill}
                     </span>
                 </div>
                 <div className="work_content">
                     <span className="msg_16">
-                        If you just want to try React, create-react-app is recommended to create a react project. Quick start
-                        Because create-react-app and vue-cli are different, create-react-app encapsulates the relevant configuration of webpack directly, so the degree of customization is not high, so consider building a React project manually.
+                       {this.state.worksDetail.content}
                     </span>
                     <div className="images_wrapper">
                         <RcViewer ref='viewer'>
-                            <img className="image_work"
-                                 src="http://bmob-cdn-25931.b0.upaiyun.com/2019/05/23/f81b0bd540cb619a804d53b3f69a29a3.png"/>
-                            <img className="image_work"
-                                 src="http://bmob-cdn-25931.b0.upaiyun.com/2019/05/23/38d1d9d440679b1580799b01a61bb801.png"/>
-                            <img className="image_work"
-                                 src="http://bmob-cdn-25931.b0.upaiyun.com/2019/05/23/1a3a41c440b62e9c80a8ec52b30fb63c.png"/>
-                            <img className="image_work"
-                                 src="http://bmob-cdn-25931.b0.upaiyun.com/2019/05/23/c25f13c64084239f8083776c5044d1e0.png"/>
-                            <img className="image_work"
-                                 src="http://bmob-cdn-25931.b0.upaiyun.com/2019/05/23/185d375840ee57fe80a54d0c89a394c5.png"/>
-                            <img className="image_work"
-                                 src="http://bmob-cdn-25931.b0.upaiyun.com/2019/05/23/95530ccf404e8f8180ead73b4f3ccfa8.png"/>
-                            <img className="image_work"
-                                 src="http://bmob-cdn-25931.b0.upaiyun.com/2019/05/23/6b852a8540d823c4807c140cea7d995f.png"/>
+                            {this.state.worksDetail.images ?
+                                this.state.worksDetail.images.map((value) => (
+                                    <img className="image_work"
+                                         src={value}/>
+                                )) : ""}
                         </RcViewer>
                     </div>
 
@@ -60,6 +53,21 @@ class DetailView extends Component {
 
     handleBackClick = () => {
         this.props.history.push("/")
+    }
+
+    componentDidMount() {
+        let id = decodeQuery(this.props.location.search).id;
+        console.log(id)
+        if (id) {
+            let query = Bmob.Query('works');
+            query.get(id).then(res => {
+                this.setState({
+                    worksDetail: res
+                })
+            }).catch(err => {
+                console.log(err)
+            })
+        }
     }
 }
 

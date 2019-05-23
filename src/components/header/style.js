@@ -10,7 +10,6 @@ export const HeaderWrapper = styled.div`
     height: 100px;
     font-size: 20px;
     color: #91989f;
-    font-family:Helvetica;
     font-weight: 500;
     .content{
       margin: auto;

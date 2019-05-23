@@ -1,12 +1,14 @@
 import React, {Component} from 'react';
 import {HomeWrapper} from "./style"
-import imageUrl from '../../assets/image_item_nome.png'
 import {Link} from 'react-router-dom'
+import Bmob from "hydrogen-js-sdk";
 
 class HomeView extends Component {
     state = {
         index: 0,
-        navArray: ["ALL", "NAV_WRAPPER", "COMPONENT", "GRAPHIC DESIGN"]
+        navArray: ["ALL", "NAV_WRAPPER", "COMPONENT", "GRAPHIC DESIGN"],
+        worksAllData: [],
+        worksListData: []
     }
 
     render() {
@@ -22,25 +24,46 @@ class HomeView extends Component {
                 </div>
 
                 <div className="works_wrapper">
-                    <div className="work_item">
-                        <div className="image_wrapper">
-                            <Link to="/detail">
-                                <img
-                                    className="work_image"
-                                    src="http://bmob-cdn-25931.b0.upaiyun.com/2019/05/22/b25c777640affbb68057e865835b3600.png"/>
-                            </Link>
+                    {this.state.worksListData.map((value => (
+                        <div className="work_item" key={value.objectId}>
+                            <div className="image_wrapper">
+                                <Link to={`/detail?id=${value.objectId}`}>
+                                    <img
+                                        className="work_image"
+                                        src={value.image_url}/>
+                                </Link>
+                            </div>
+                            <span className="work_title">{value.title}</span>
+                            <span className="work_desc">{value.desc}</span>
                         </div>
-                        <span className="work_title">RESEARCH</span>
-                        <span className="work_desc">PRODUCTS DESIGN</span>
-                    </div>
+                    )))}
                 </div>
             </HomeWrapper>
         );
     }
 
+    componentDidMount() {
+        const query = Bmob.Query('works');
+        query.find().then(res => {
+            this.setState({
+                worksAllData: res,
+                worksListData: res
+            })
+        });
+    }
+
     handleClick = (index) => {
+        let worksAllData = this.state.worksAllData
+        let worksListData = []
+        if (index === 0) {
+            worksListData = worksAllData
+        } else {
+            worksListData = worksAllData.filter((item) => item.category === index)
+        }
+        console.log(worksListData)
         this.setState({
-            index
+            index,
+            worksListData
         })
     }
 }
