@@ -11,7 +11,7 @@ class HeaderView extends Component {
         return (
             <HeaderWrapper>
                 <div className="content">
-                    <span className="project_name">
+                    <span className="project_name" onClick={this.handleClick.bind(this, true)}>
                         JIAHAO GUO
                     </span>
                     <span className={this.state.isHome ? "works active_style" : "works"}

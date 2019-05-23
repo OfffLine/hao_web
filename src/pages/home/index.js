@@ -6,7 +6,7 @@ import Bmob from "hydrogen-js-sdk";
 class HomeView extends Component {
     state = {
         index: 0,
-        navArray: ["ALL", "NAV_WRAPPER", "COMPONENT", "GRAPHIC DESIGN"],
+        navArray: ["ALL", "RESEARCH", "PRODUCTS DESIGN", "GRAPHIC DESIGN"],
         worksAllData: [],
         worksListData: []
     }

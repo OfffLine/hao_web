@@ -20,6 +20,7 @@ export const HeaderWrapper = styled.div`
     }
     .project_name{
       flex: 1;
+      cursor: pointer;
     }
     .works{
       cursor: pointer;
