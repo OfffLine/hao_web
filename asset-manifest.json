@@ -1,18 +1,18 @@
 {
   "files": {
     "main.css": "/hao_web/static/css/main.fe8698e1.chunk.css",
-    "main.js": "/hao_web/static/js/main.2f57f341.chunk.js",
-    "main.js.map": "/hao_web/static/js/main.2f57f341.chunk.js.map",
+    "main.js": "/hao_web/static/js/main.2f1fc314.chunk.js",
+    "main.js.map": "/hao_web/static/js/main.2f1fc314.chunk.js.map",
     "runtime~main.js": "/hao_web/static/js/runtime~main.800e8161.js",
     "runtime~main.js.map": "/hao_web/static/js/runtime~main.800e8161.js.map",
-    "static/js/2.e60f6b4d.chunk.js": "/hao_web/static/js/2.e60f6b4d.chunk.js",
-    "static/js/2.e60f6b4d.chunk.js.map": "/hao_web/static/js/2.e60f6b4d.chunk.js.map",
+    "static/css/2.7ada4531.chunk.css": "/hao_web/static/css/2.7ada4531.chunk.css",
+    "static/js/2.124fe198.chunk.js": "/hao_web/static/js/2.124fe198.chunk.js",
+    "static/js/2.124fe198.chunk.js.map": "/hao_web/static/js/2.124fe198.chunk.js.map",
     "index.html": "/hao_web/index.html",
-    "precache-manifest.1191b72f8eda7756f94c739d042d5794.js": "/hao_web/precache-manifest.1191b72f8eda7756f94c739d042d5794.js",
+    "precache-manifest.6a3db794ac4b5cd7d65476853eccdd6c.js": "/hao_web/precache-manifest.6a3db794ac4b5cd7d65476853eccdd6c.js",
     "service-worker.js": "/hao_web/service-worker.js",
+    "static/css/2.7ada4531.chunk.css.map": "/hao_web/static/css/2.7ada4531.chunk.css.map",
     "static/css/main.fe8698e1.chunk.css.map": "/hao_web/static/css/main.fe8698e1.chunk.css.map",
-    "static/media/image_about.png": "/hao_web/static/media/image_about.1db1febd.png",
-    "static/media/image_item_nome.png": "/hao_web/static/media/image_item_nome.05306c83.png",
-    "static/media/image_work_detail.png": "/hao_web/static/media/image_work_detail.10fc1dad.png"
+    "static/media/image_about.png": "/hao_web/static/media/image_about.1db1febd.png"
   }
 }
